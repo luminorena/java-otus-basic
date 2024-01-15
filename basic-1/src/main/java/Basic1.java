@@ -1,7 +1,6 @@
-import java.util.Random;
 import java.util.Scanner;
 
-public class Basic_1 {
+public class Basic1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите целое число");
@@ -45,8 +44,8 @@ public class Basic_1 {
 
     public static void selectColor(int data) {
         if (data <= 10) System.out.println("Красный");
-        else if (data > 10 && data <= 20) System.out.println("Желтый");
-        else if (data > 20) System.out.println("Зеленый");
+         if (data <= 20) System.out.println("Желтый");
+            else  System.out.println("Зеленый");
     }
 
     public static void compareNumbers(int a, int b) {
@@ -58,6 +57,7 @@ public class Basic_1 {
     public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
         int resultOperation = increment ? initValue + delta : initValue - delta;
         System.out.println(resultOperation);
+        System.out.println(increment);
 
     }
 
@@ -66,8 +66,7 @@ public class Basic_1 {
     }
 
     public static boolean randomBoolean() {
-        Random random = new Random();
-        return random.nextBoolean();
+        return Math.random() > 0.5;
     }
 
 
