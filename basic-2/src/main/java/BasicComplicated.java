@@ -4,18 +4,38 @@ import java.util.List;
 
 public class BasicComplicated {
     public static void main(String[] args) {
-        unionArrays(new int[]{3, 1, 4, 4, 2, 18}, new int[]{3, 4, 2, 4});
+        unionTwoArrays(new int[]{3, 1, 4, 4, 2, 18}, new int[]{3, 4, 2, 4});
+        System.out.println("-------------------------------------------");
+        unionManyArrays(new int[]{2, 4, 5, 8}, new int[]{1, 3, 89},
+                new int[]{2, 3}, new int[]{5, 8, 9});
         System.out.println("-------------------------------------------");
         isSorted(new int[]{-1, -2, -4});
         System.out.println("-------------------------------------------");
         reverseArray(new Integer[]{-1, -445, -4});
         System.out.println("-------------------------------------------");
         equalArrays(new int[]{1, 3, 4, 8});
-
-
     }
 
-    public static void unionArrays(int[] arr, int[] arr1) {
+
+    public static void unionManyArrays(int[]... ar) {
+        int maxLength = 0;
+        for (int[] arr : ar) {
+            if (arr.length > maxLength) {
+                maxLength = arr.length;
+            }
+        }
+        int[] result = new int[maxLength];
+        for (int i = 0; i < maxLength; i++) {
+            for (int[] arr : ar) {
+                if (i < arr.length)
+                    result[i] += arr[i];
+            }
+        }
+
+        System.out.println(Arrays.toString(result));
+    }
+
+    public static void unionTwoArrays(int[] arr, int[] arr1) {
         int length = (Math.max(arr.length, arr1.length));
         int[] result = new int[length];
         for (int i = 0; i < length; i++) {
