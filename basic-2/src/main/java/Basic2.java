@@ -4,15 +4,14 @@ import java.util.stream.Stream;
 public class Basic2 {
 
     public static void main(String[] args) {
+        fillArrayWithNumber(100, new int[5]);
+        System.out.println("--------------------------------------------------------------------------");
         printStringManyTimes(8, " >");
         System.out.println("--------------------------------------------------------------------------");
         printIntArray(new int[]{1, 3, 5, 8, 10});
         System.out.println("--------------------------------------------------------------------------");
-        fillArrayWithNumber(2, new int[4]);
-        System.out.println("--------------------------------------------------------------------------");
         increaseArrayOnNumber(2, new int[]{1, 3, 5, 8, 10});
         System.out.println("--------------------------------------------------------------------------");
-        // если кол-во элементов нечетное, то "лишний" элемент отходит в первую часть массива
         greatestHalf(new int[]{4, 6, 3, 5, 6, 4});
     }
 
@@ -28,9 +27,22 @@ public class Basic2 {
         System.out.println(sum);
     }
 
+    // Реализуйте метод, принимающий в качестве аргументов целое число
+    // и ссылку на целочисленный массив,
+    // метод должен заполниться каждую ячейку массива указанным числом.
+
     public static void fillArrayWithNumber(int number, int[] array) {
-        System.out.println("В массиве " + Arrays.toString(array) + " все числа равны " + number);
-        Arrays.stream(array).map(i -> number).forEach(System.out::println);
+        System.out.println("Исходный массив: ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print((int) (Math.random() * (200 + 1)) - 100 + "  ");
+        }
+        System.out.println();
+        System.out.println("Модифицированный массив: ");
+        for (int i = 0; i < array.length; i++) {
+            int element = array[i] = number;
+            System.out.print(element + "  ");
+        }
+        System.out.println();
     }
 
     public static void increaseArrayOnNumber(int number, int[] array) {
