@@ -1,3 +1,5 @@
+package ru.otus;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -6,8 +8,7 @@ public class BasicComplicated {
     public static void main(String[] args) {
         unionTwoArrays(new int[]{3, 1, 4, 4, 2, 18}, new int[]{3, 4, 2, 4});
         System.out.println("-------------------------------------------");
-        unionManyArrays(new int[]{2, 4, 5, 8}, new int[]{1, 3, 89},
-                new int[]{2, 3}, new int[]{5, 8, 9});
+        unionManyArrays(new int[]{2, 4, 5, 8}, new int[]{1, 3, 89});
         System.out.println("-------------------------------------------");
         isSorted(new int[]{-1, -2, -4});
         System.out.println("-------------------------------------------");
@@ -25,10 +26,9 @@ public class BasicComplicated {
             }
         }
         int[] result = new int[maxLength];
-        for (int i = 0; i < maxLength; i++) {
-            for (int[] arr : ar) {
-                if (i < arr.length)
-                    result[i] += arr[i];
+        for (int[] arr : ar) {
+            for (int i = 0; i < arr.length; i++) {
+                result[i] += arr[i];
             }
         }
 
@@ -39,7 +39,6 @@ public class BasicComplicated {
         int length = (Math.max(arr.length, arr1.length));
         int[] result = new int[length];
         for (int i = 0; i < length; i++) {
-            result[i] = 0;
             if (i < arr.length)
                 result[i] += arr[i];
             if (i < arr1.length)
@@ -72,12 +71,10 @@ public class BasicComplicated {
     }
 
     public static void reverseArray(Integer[] array) {
-        // Guava, ArrayUtils...
         System.out.println("Исходный массив " + Arrays.toString(array));
         List<Integer> list = Arrays.asList(array);
         Collections.reverse(list);
         System.out.println("Перевернутый массив " + list);
-
     }
 
     public static void equalArrays(int[] arr) {
@@ -88,7 +85,8 @@ public class BasicComplicated {
         }
         int i = 0;
         int j = arr.length - 1;
-        int sum1 = arr[i], sum2 = arr[j];
+        int sum1 = arr[i];
+        int sum2 = arr[j];
         do {
             if (sum1 < sum2) {
                 i++;
