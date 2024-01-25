@@ -6,7 +6,9 @@ import java.util.List;
 
 public class BasicComplicated {
     public static void main(String[] args) {
-        unionTwoArrays(new int[]{3, 1, 4, 4, 2, 18}, new int[]{3, 4, 2, 4});
+        unionTwoArraysOld(new int[]{3, 1, 4, 4, 2, 18}, new int[]{3, 4, 2, 4});
+        System.out.println("-------------------------------------------");
+        unionTwoArraysNew(new int[]{3, 1, 4, 4, 2, 18}, new int[]{3, 4, 2, 4});
         System.out.println("-------------------------------------------");
         unionManyArrays(new int[]{2, 4, 5, 8}, new int[]{1, 3, 89});
         System.out.println("-------------------------------------------");
@@ -14,7 +16,7 @@ public class BasicComplicated {
         System.out.println("-------------------------------------------");
         reverseArray(new Integer[]{-1, -445, -4});
         System.out.println("-------------------------------------------");
-        equalArrays(new int[]{1, 3, 4, 8});
+        equalArrays(new int[]{-1, -1, 3, -1, -1, 3});
     }
 
 
@@ -35,7 +37,7 @@ public class BasicComplicated {
         System.out.println(Arrays.toString(result));
     }
 
-    public static void unionTwoArrays(int[] arr, int[] arr1) {
+    public static void unionTwoArraysOld(int[] arr, int[] arr1) {
         int length = (Math.max(arr.length, arr1.length));
         int[] result = new int[length];
         for (int i = 0; i < length; i++) {
@@ -46,6 +48,19 @@ public class BasicComplicated {
         }
         System.out.println(Arrays.toString(result));
 
+    }
+
+    public static void unionTwoArraysNew(int[] arr, int[] arr1) {
+        int length = Math.max(arr.length, arr1.length);
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr1));
+        int[] result = new int[length];
+        for (int[] ar : new int[][]{arr, arr1}) {
+            for (int i = 0; i < ar.length; i++) {
+                result[i] += ar[i];
+            }
+        }
+        System.out.println(Arrays.toString(result));
     }
 
     public static void isSorted(int[] array) {
@@ -85,15 +100,15 @@ public class BasicComplicated {
         }
         int i = 0;
         int j = arr.length - 1;
-        int sum1 = arr[i];
-        int sum2 = arr[j];
+        int sum1 = Math.abs(arr[i]);
+        int sum2 = Math.abs(arr[j]);
         do {
-            if (sum1 < sum2) {
+            if (Math.abs(sum1) < Math.abs(sum2)) {
                 i++;
-                sum1 += arr[i];
+                sum1 += Math.abs(arr[i]);
             } else {
                 j--;
-                sum2 += arr[j];
+                sum2 += Math.abs(arr[j]);
             }
         }
         while (i < j - 1);
@@ -105,7 +120,9 @@ public class BasicComplicated {
             }
         else
             System.out.println(false);
+        System.out.println();
     }
+
 }
 
 
