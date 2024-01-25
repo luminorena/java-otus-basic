@@ -3,6 +3,7 @@ package ru.otus;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class BasicComplicated {
     public static void main(String[] args) {
@@ -16,7 +17,7 @@ public class BasicComplicated {
         System.out.println("-------------------------------------------");
         reverseArray(new Integer[]{-1, -445, -4});
         System.out.println("-------------------------------------------");
-        equalArrays(new int[]{-1, -1, 3, -1, -1, 3});
+        equalArrays(new int[]{2, 1, 1, 3, -3});
     }
 
 
@@ -98,20 +99,31 @@ public class BasicComplicated {
             System.out.println(false);
             return;
         }
+        int overallSum = IntStream.of(arr).sum();
+        if (overallSum % 2 != 0) {
+            System.out.println("false");
+            return;
+        }
         int i = 0;
         int j = arr.length - 1;
-        int sum1 = Math.abs(arr[i]);
-        int sum2 = Math.abs(arr[j]);
+        int sum1 = arr[i];
+        int sum2 = arr[j];
         do {
-            if (Math.abs(sum1) < Math.abs(sum2)) {
+            if (sum1 > overallSum / 2) {
                 i++;
-                sum1 += Math.abs(arr[i]);
+                sum1 += arr[i];
+            } else if (sum2 > overallSum / 2) {
+                j--;
+                sum2 += arr[j];
+            } else if (sum1 < sum2) {
+                i++;
+                sum1 += arr[i];
             } else {
                 j--;
-                sum2 += Math.abs(arr[j]);
+                sum2 += arr[j];
             }
         }
-        while (i < j - 1);
+        while (i < j - 1) ;
         if (sum1 == sum2)
             for (i = 0; i < arr.length; i++) {
                 if (i == j)
@@ -122,7 +134,6 @@ public class BasicComplicated {
             System.out.println(false);
         System.out.println();
     }
-
 }
 
 
