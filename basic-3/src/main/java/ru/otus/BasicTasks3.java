@@ -71,11 +71,11 @@ public class BasicTasks3 {
         int sum = 0;
         int[] secondary = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
+          //  for (int j = 0; j < arr[i].length; j++) {
                 if (arr.length == 1) {
                     return -1;
                 }
-            }
+          //  }
         }
         for (int j = 0; j < secondary.length; j++) {
             secondary[j] = arr[1][j];
