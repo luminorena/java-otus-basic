@@ -1,3 +1,4 @@
+package ru.otus;
 
 public class User {
     private String lastName;

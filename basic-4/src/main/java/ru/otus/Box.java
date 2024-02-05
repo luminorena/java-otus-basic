@@ -1,3 +1,5 @@
+package ru.otus;
+
 public class Box {
     private int length;
     private int width;

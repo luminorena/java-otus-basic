@@ -1,3 +1,5 @@
+package ru.otus;
+
 import com.github.javafaker.Faker;
 
 public class Main {
@@ -15,8 +17,6 @@ public class Main {
         }
 
         System.out.println("----------------------------------------------------");
-
-
         Box box = new Box(270, 200, 195, "серый");
         box.setColor("белый");
         box.printData();
