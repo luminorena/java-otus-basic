@@ -1,5 +1,3 @@
 rootProject.name = 'Java-Otus-Basic'
 include 'basics-1'
-include 'basics-2'
-include 'basics-6'
-
+include 'basic-6'

@@ -36,3 +36,5 @@ out
 *.iws
 *.ipr
 *.idea
+/basic-6/gradlew
+/basic-6/gradlew.bat
