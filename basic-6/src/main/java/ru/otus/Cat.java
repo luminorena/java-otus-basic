@@ -1,9 +1,9 @@
 package ru.otus;
 
 public class Cat {
-    String name;
-    int maxNeededFood;
-    boolean isHungry;
+    private String name;
+    private int maxNeededFood;
+    private boolean isHungry;
 
     public Cat(String name, int maxNeededFood) {
         this.name = name;
