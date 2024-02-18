@@ -8,9 +8,8 @@ public class Main {
         Bike bike = new Bike("Дружок");
         OffRider offRider = new OffRider("Sherp", 12);
 
-        Human human = new Human("Ольга", offRider, 12);
+        Human human = new Human("Ольга", car, 12);
         human.info();
-        System.out.println(human.move(5, TerritoryType.PLAIN));
-        System.out.println(human.calculateHumanPower());
+        System.out.println(human.move(10 ,TerritoryType.PLAIN));
     }
 }

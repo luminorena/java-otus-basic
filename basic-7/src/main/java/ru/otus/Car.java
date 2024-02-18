@@ -1,11 +1,8 @@
 package ru.otus;
 
-import static ru.otus.Human.humanPower;
-
 public class Car implements Transport {
     protected String type;
     protected int petrolCount;
-
 
     public Car(String type, int petrolCount) {
         this.type = type;
@@ -31,7 +28,6 @@ public class Car implements Transport {
         }
         petrolCount -= distance;
         System.out.println("Машина " + type + " прошла расстояние " + distance);
-        humanPower = humanPower - Math.random() * distance;
         return true;
     }
 }

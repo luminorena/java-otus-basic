@@ -1,8 +1,7 @@
 package ru.otus;
 
-import static ru.otus.Human.humanPower;
 
-public class Bike implements Transport  {
+public class Bike implements Transport {
     protected String type;
 
 
@@ -21,16 +20,9 @@ public class Bike implements Transport  {
             System.out.println("Велосипед не может ехать по болоту");
             return false;
         }
-        humanPower = humanPower - Math.random() * distance;
-        if (humanPower < 0) {
-            System.out.println("Человек очень устал, ему нужен отдых");
-            return false;
-        } else {
-            System.out.println("У человека на велосипеде осталось " + Math.ceil(humanPower) + " сил");
-            System.out.println("Велосипед марки " + type + " прошёл расстояние " + distance);
-            return true;
-        }
+        return true;
     }
-
-
 }
+
+
+

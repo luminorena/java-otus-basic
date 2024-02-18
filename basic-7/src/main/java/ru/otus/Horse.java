@@ -1,11 +1,9 @@
 package ru.otus;
 
-import static ru.otus.Human.humanPower;
 
-public class Horse implements Transport  {
+public class Horse implements Transport {
     protected String name;
     protected int horsePower;
-
 
     public Horse(String name, int horsePower) {
         this.name = name;
@@ -30,7 +28,6 @@ public class Horse implements Transport  {
             return false;
         }
         horsePower -= distance;
-        humanPower = humanPower - Math.random() * distance;
         System.out.println("Лошадь " + name + " прошла расстояние " + distance);
         return true;
     }
