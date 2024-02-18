@@ -42,5 +42,15 @@ public class Human implements Transport {
         return false;
     }
 
+    public boolean calculateHumanPower() {
+        if (humanPower < 0) {
+            System.out.println("Человек очень устал, ему нужен отдых");
+            return false;
+        } else {
+            System.out.println("У человека на транспорте осталось " + Math.ceil(humanPower) + " сил");
+            return true;
+        }
+    }
+
 
 }

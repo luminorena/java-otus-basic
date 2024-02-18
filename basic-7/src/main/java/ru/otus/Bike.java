@@ -1,6 +1,8 @@
 package ru.otus;
 
-public class Bike extends Human implements Transport {
+import static ru.otus.Human.humanPower;
+
+public class Bike implements Transport  {
     protected String type;
 
 
