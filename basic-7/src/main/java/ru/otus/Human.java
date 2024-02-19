@@ -3,12 +3,12 @@ package ru.otus;
 public class Human  {
     protected String name;
     protected Transport currentTransport;
-    protected double humanPower;
+    protected double personPower;
 
-    public Human(String name, Transport currentTransport, double humanPower) {
+    public Human(String name, Transport currentTransport, double personPower) {
         this.name = name;
         this.currentTransport = currentTransport;
-        this.humanPower = humanPower;
+        this.personPower = personPower;
     }
 
     public Human() {
@@ -21,7 +21,7 @@ public class Human  {
     }
 
     public boolean move(int distance, TerritoryType territoryType) {
-        var remainingPower = humanPower - Math.random() * distance;
+        var remainingPower = personPower - Math.random() * distance;
         if (remainingPower < 0) {
             System.out.println("Человек устал, ему нужен отдых");
             return false;
@@ -37,12 +37,13 @@ public class Human  {
             }
             return res;
         }
-        System.out.println("Человек " + name + " имеет силу, равную " + humanPower);
-        if (humanPower - distance < 0) {
+        System.out.println("Человек " + name + " имеет силу, равную " + personPower);
+        if (personPower - distance < 0) {
             System.out.println("У человека нет сил пройти расстояние " + distance);
             return false;
         } else {
             System.out.println("Человек " + name + " прошел расстояние " + distance);
+            System.out.println("У человека осталось " + Math.ceil(remainingPower) + " сил");
             return true;
         }
 
