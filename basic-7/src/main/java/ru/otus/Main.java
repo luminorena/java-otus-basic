@@ -4,7 +4,7 @@ package ru.otus;
 public class Main {
     public static void main(String[] args) {
         Horse horse = new Horse("Заря", 10);
-        Car car = new Car("Honda", 4);
+        Car car = new Car("Honda", 40);
         Bike bike = new Bike("Дружок");
         OffRider offRider = new OffRider("Sherp", 12);
 

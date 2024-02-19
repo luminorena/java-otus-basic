@@ -22,21 +22,22 @@ public class Human  {
 
     public boolean move(int distance, TerritoryType territoryType) {
         var remainingPower = personPower - Math.random() * distance;
-        if (remainingPower < 0) {
-            System.out.println("Человек устал, ему нужен отдых");
-            return false;
-        } else {
-            System.out.println("У человека на транспорте осталось " +
-                    Math.ceil(remainingPower) + " сил");
-       }
         if (currentTransport != null) {
             var res = currentTransport.move(distance, territoryType);
             if (res) {
                 System.out.println("Человек слез с " + currentTransport);
                 currentTransport = null;
             }
+            if (remainingPower < 0) {
+                System.out.println("Человек устал, ему нужен отдых");
+                return false;
+            } else {
+                System.out.println("У человека на транспорте осталось " +
+                        Math.ceil(remainingPower) + " сил");
+            }
             return res;
         }
+
         System.out.println("Человек " + name + " имеет силу, равную " + personPower);
         if (personPower - distance < 0) {
             System.out.println("У человека нет сил пройти расстояние " + distance);
