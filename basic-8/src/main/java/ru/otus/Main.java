@@ -7,14 +7,15 @@ public class Main {
 
     public static void main(String[] args) {
         String[][] arr = new String[arraySize][arraySize];
+
+        arraySum(arr);
+    }
+
+    public static void arraySum(String[][] arr) throws AppArrayDataException {
+        String valuesToInsert = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         if (arr.length != 4) {
             throw new AppArraySizeException("Размер массива должен быть равен 4м");
         }
-        getArray(arr);
-    }
-
-    public static void getArray(String[][] arr) throws AppArrayDataException {
-        String valuesToInsert = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         int result = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
