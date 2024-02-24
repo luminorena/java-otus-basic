@@ -39,7 +39,7 @@ public class Main {
         System.out.println("--------------------------------------------");
         System.out.println(isAverageAgeGreater(employeeList, 25));
         System.out.println("--------------------------------------------");
-        getTheYoungest(employeeList);
+        System.out.println(getTheYoungest(employeeList));
     }
 
     public static List<Integer> sequenceOfElements(int min, int max) {
@@ -101,22 +101,22 @@ public class Main {
     public static boolean isAverageAgeGreater(List<Employee> list, int avgAge) {
         int calculateAvgAge = 0;
         for (Employee element : list) {
-            calculateAvgAge += element.getAge() / list.size();
+            calculateAvgAge += element.getAge();
         }
-        return calculateAvgAge > avgAge;
+        return calculateAvgAge / list.size() > avgAge;
     }
 
-    public static void getTheYoungest(List<Employee> list) {
-        List<Employee> theYoungest = new ArrayList<>();
-        for (int i = 0; i < list.size() - 1; i++) {
-            if (list.get(i).getAge() < list.get(i + 1).getAge()) {
-                theYoungest.add(list.get(i));
-            } else {
-                theYoungest.add(list.get(i + 1));
-                theYoungest.remove(list.get(i));
+
+    public static Employee getTheYoungest(List<Employee> list) {
+        int minAge = list.get(0).getAge();
+        int index = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getAge() < minAge) {
+                minAge = list.get(i).getAge();
+                index = i;
             }
         }
-        System.out.println(theYoungest);
+        return list.get(index);
     }
 }
 
