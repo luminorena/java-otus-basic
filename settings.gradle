@@ -1,3 +1,4 @@
 rootProject.name = 'Java-Otus-Basic'
 include 'basics-1'
+include 'basic-10'
 
