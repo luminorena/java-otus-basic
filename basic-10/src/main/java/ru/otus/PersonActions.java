@@ -3,8 +3,8 @@ package ru.otus;
 import java.util.*;
 
 public class PersonActions {
-    Map<Person, List<Integer>> personMap = new HashMap<>();
-    List<List<Integer>> phoneNumbers = new ArrayList<>();
+    private Map<Person, List<Integer>> personMap = new HashMap<>();
+    private List<List<Integer>> phoneNumbers = new ArrayList<>();
 
 
     @Override

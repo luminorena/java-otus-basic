@@ -3,9 +3,9 @@ package ru.otus;
 import java.util.Objects;
 
 public final class Person {
-    final String firstName;
-    final String middleName;
-    final String lastName;
+  private final String firstName;
+  private final String middleName;
+  private final String lastName;
 
     public Person(String firstName, String middleName, String lastName) {
         this.firstName = firstName;
