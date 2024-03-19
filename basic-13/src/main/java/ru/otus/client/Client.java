@@ -1,4 +1,4 @@
-package ru.otus;
+package ru.otus.client;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -29,7 +29,7 @@ public class Client {
                     break;
                 }
 
-            } catch(IOException e){
+            } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }

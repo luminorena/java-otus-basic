@@ -1,8 +1,8 @@
-package ru.otus;
+package ru.otus.client;
 
 import java.io.*;
 
-public class ExampleClient implements AutoCloseable{
+public class ExampleClient implements AutoCloseable {
     private final DataInputStream inputStream;
     private final DataOutputStream outputStream;
 
@@ -14,16 +14,13 @@ public class ExampleClient implements AutoCloseable{
     public void send(String message) throws IOException {
         outputStream.writeUTF(message);
         outputStream.flush();
-        String result = inputStream.readUTF();
-        System.out.println(result);
     }
 
     public void sendDouble(double number) throws IOException {
         outputStream.writeDouble(number);
         outputStream.flush();
-        double result = inputStream.readDouble();
-        System.out.println(result);
     }
+
     @Override
     public void close() throws Exception {
         inputStream.close();
