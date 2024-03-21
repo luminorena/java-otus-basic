@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SecondRealization {
-    public synchronized static void main(String[] args) throws InterruptedException {
+    public static synchronized void main(String[] args) throws InterruptedException {
         long initialTime = System.currentTimeMillis();
         AtomicInteger increment = new AtomicInteger();
         int size = 100_000_000;
